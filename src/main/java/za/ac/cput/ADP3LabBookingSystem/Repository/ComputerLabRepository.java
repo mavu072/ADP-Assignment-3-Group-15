@@ -4,10 +4,9 @@
  * Author: Avuyile Mgxotshwa (219132488)
  * Date: 26 July 2021
  * */
-package za.ac.cput.ADP3LabBookingSystem.Repository.ComputerLabRepository;
+package za.ac.cput.ADP3LabBookingSystem.Repository;
 
 import za.ac.cput.ADP3LabBookingSystem.Entity.ComputerLab;
-import za.ac.cput.ADP3LabBookingSystem.Repository.IRepository;
 
 import java.util.HashSet;
 import java.util.Set;

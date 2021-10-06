@@ -4,14 +4,14 @@
  * Author: Avuyile Mgxotshwa (219132488)
  * Date: 26 July 2021
  * */
-package za.ac.cput.ADP3LabBookingSystem.Repository.ComputerLabRepository;
+package za.ac.cput.ADP3LabBookingSystem.Repository;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import za.ac.cput.ADP3LabBookingSystem.Entity.ComputerLab;
 import za.ac.cput.ADP3LabBookingSystem.Factory.ComputerLabFactory;
+import za.ac.cput.ADP3LabBookingSystem.Repository.ComputerLabRepository;
 
 import static org.junit.jupiter.api.Assertions.*;
 
