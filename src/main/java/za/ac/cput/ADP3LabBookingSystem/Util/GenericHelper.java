@@ -10,8 +10,8 @@ import java.util.UUID;
 
 public class GenericHelper {
 
-    //buildingId
-    public static String generateBuildingId() {
+    //generatedId
+    public static String generateId() {
 
         return UUID.randomUUID().toString();
     }

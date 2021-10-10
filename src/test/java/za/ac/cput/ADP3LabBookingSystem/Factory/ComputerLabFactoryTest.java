@@ -15,7 +15,7 @@ class ComputerLabFactoryTest {
 
     @Test
     public void createComputerLab(){
-        ComputerLab computerLab = ComputerLabFactory.createComputerLab("2.24", 35, true);
+        ComputerLab computerLab = ComputerLabFactory.createComputerLab("1.19", "1002", 35, true);
         System.out.println(computerLab);
     }
 }

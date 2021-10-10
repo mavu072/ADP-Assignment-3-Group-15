@@ -1,5 +1,7 @@
-## ADP3 Group 15
-### Computer Lab Booking System
+# Computer Lab E-Management Application (LEMA)
+
+### ADP3 Group 15
+
 ### Problem Statement
 Group 15 has been hired by a local college in Cape Town called TechStart, to develop a Computer Lab Booking Application.
 TechStart has 831 students (thus far)and, a software solution is needed to manage how students are seated in computer
@@ -31,3 +33,5 @@ Project is created with the following:
 * Maven
 * JDK version 16
 * JUnit5 version 5.7.1
+* Spring Framework
+* MySQL database

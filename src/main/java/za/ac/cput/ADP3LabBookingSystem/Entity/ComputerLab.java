@@ -6,11 +6,23 @@
 * */
 package za.ac.cput.ADP3LabBookingSystem.Entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "ComputerLab")
 public class ComputerLab {
+
     //private variables
-    private String labId, buildingId;
+    @Id
+    private String labId;
+    private String buildingId;
     private int capacity;
     private boolean availability;
+
+    protected ComputerLab() {}
 
     //Builder builder
     private ComputerLab(Builder builder) {
@@ -32,7 +44,7 @@ public class ComputerLab {
         return capacity;
     }
 
-    public boolean isAvailability() {
+    public boolean getAvailability() {
         return availability;
     }
 

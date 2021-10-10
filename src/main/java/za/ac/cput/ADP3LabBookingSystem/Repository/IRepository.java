@@ -9,6 +9,7 @@ import za.ac.cput.ADP3LabBookingSystem.Entity.ComputerLab;
 
 import java.util.Set;
 
+@Deprecated
 public interface IRepository<T, ID> {
     public T create(T t);
     public T read(ID id);

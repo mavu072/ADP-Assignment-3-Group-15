@@ -11,12 +11,10 @@ import za.ac.cput.ADP3LabBookingSystem.Util.GenericHelper;
 
 public class ComputerLabFactory {
 
-    public static ComputerLab createComputerLab(String labID, int capacity, boolean availability) {
-
-        String buildingId= GenericHelper.generateBuildingId();
+    public static ComputerLab createComputerLab(String labId, String buildingId, int capacity, boolean availability) {
 
         ComputerLab computerLab = new ComputerLab.Builder()
-                .setLabId(labID)
+                .setLabId(labId)
                 .setBuildingId(buildingId)
                 .setCapacity(capacity)
                 .setAvailability(availability)

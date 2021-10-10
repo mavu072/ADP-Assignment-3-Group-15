@@ -11,7 +11,7 @@ import za.ac.cput.ADP3LabBookingSystem.Util.GenericHelper;
 
 public class BuildingFactory {
     public static Building createBuilding(String engineering){
-        String buildingId = GenericHelper.generateBuildingId();
+        String buildingId = GenericHelper.generateId();
 
         Building building = new Building.Builder()
                 .setBuildingId(buildingId)
