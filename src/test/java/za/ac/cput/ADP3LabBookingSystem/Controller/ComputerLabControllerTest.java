@@ -12,8 +12,7 @@ import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import za.ac.cput.ADP3LabBookingSystem.Entity.ComputerLab;
 import za.ac.cput.ADP3LabBookingSystem.Factory.ComputerLabFactory;
 
@@ -27,10 +26,10 @@ class ComputerLabControllerTest {
     private TestRestTemplate testRestTemplate;
     private final String baseURL = "http://localhost:8080/computerlab";
 
-    private static ComputerLab computerLab = ComputerLabFactory.createComputerLab("2.34", "20002", 120, true);
+    private static ComputerLab computerLab = ComputerLabFactory.createComputerLab("3.14", "30000", 120, true);
 
     @Test
-    void create() {
+    void a_create() {
         String url = baseURL + "/create";
         ResponseEntity<ComputerLab> postResponse = testRestTemplate.postForEntity(url, computerLab, ComputerLab.class);
         assertNotNull(postResponse);
@@ -42,18 +41,40 @@ class ComputerLabControllerTest {
     }
 
     @Test
-    void read() {
+    void b_read() {
+        String url = baseURL + "/read/" + computerLab.getLabId();
+        ResponseEntity<ComputerLab> responseEntity = testRestTemplate.getForEntity(url, ComputerLab.class);
+        assertNotNull(responseEntity);
+        System.out.println("Read data: " + responseEntity.getBody());
+        assertEquals(computerLab.getLabId(), responseEntity.getBody().getLabId());
     }
 
     @Test
-    void update() {
+    void c_update() {
+        ComputerLab updatedComputerLab = new ComputerLab.Builder().copy(computerLab).setCapacity(80).build();
+
+        String url = baseURL + "/update";
+        ResponseEntity<ComputerLab> responseEntity = testRestTemplate.postForEntity(url, updatedComputerLab, ComputerLab.class);
+        assertNotNull(responseEntity);
+        System.out.println("Updated data: " + responseEntity.getBody());
     }
 
     @Test
-    void delete() {
+    void e_delete() {
+        String url = baseURL + "/delete/" + computerLab.getLabId();
+        ResponseEntity<ComputerLab> responseEntity = testRestTemplate.getForEntity(baseURL + "/read/" + computerLab.getLabId(), ComputerLab.class);
+        assertNotNull(responseEntity.getBody().getLabId(), "Computer lab id{'" + computerLab.getLabId() + "'} was not found.");
+        testRestTemplate.delete(url);
     }
 
     @Test
-    void getAll() {
+    void d_getAll() {
+        String url = baseURL + "/getall";
+        HttpHeaders httpHeaders = new HttpHeaders();
+        HttpEntity<String> httpEntity = new HttpEntity<>(null, httpHeaders);
+        ResponseEntity<String> responseEntity = testRestTemplate.exchange(url, HttpMethod.GET, httpEntity, String.class);
+        System.out.println("Read all...");
+        System.out.println(responseEntity);
+        System.out.println(responseEntity.getBody());
     }
 }
