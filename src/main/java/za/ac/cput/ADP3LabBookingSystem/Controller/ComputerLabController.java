@@ -27,7 +27,7 @@ public class ComputerLabController {
         return computerLabService.create(newComputerLab1);
     }
 
-    @PostMapping("/read/{labId}")
+    @GetMapping("/read/{labId}")
     public ComputerLab read(@PathVariable String labId){
         return computerLabService.read(labId);
     }
@@ -42,7 +42,7 @@ public class ComputerLabController {
         return computerLabService.delete(labId);
     }
 
-    @PostMapping("/getall")
+    @GetMapping("/getall")
     public List<ComputerLab> getAll(){
         return computerLabService.getAll();
     }
