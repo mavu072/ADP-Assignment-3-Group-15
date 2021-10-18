@@ -7,6 +7,8 @@
 package za.ac.cput.ADP3LabBookingSystem.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.ADP3LabBookingSystem.Entity.ComputerLab;
 import za.ac.cput.ADP3LabBookingSystem.Factory.ComputerLabFactory;
@@ -14,7 +16,7 @@ import za.ac.cput.ADP3LabBookingSystem.Service.ComputerLabService;
 
 import java.util.List;
 
-@RestController
+@Controller
 @RequestMapping("/computerlab")
 public class ComputerLabController {
 
@@ -42,8 +44,10 @@ public class ComputerLabController {
         return computerLabService.delete(labId);
     }
 
-    @GetMapping("/getall")
-    public List<ComputerLab> getAll(){
-        return computerLabService.getAll();
+    @RequestMapping(value = "/getall", method = RequestMethod.GET)
+    public String getAll(Model model){
+        List<ComputerLab> computerLabList = computerLabService.getAll();
+        model.addAttribute("computerlabList",computerLabList);
+        return "computerLabHome";
     }
 }

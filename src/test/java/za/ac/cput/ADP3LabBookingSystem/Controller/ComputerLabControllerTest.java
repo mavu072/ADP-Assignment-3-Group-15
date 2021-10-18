@@ -24,7 +24,7 @@ class ComputerLabControllerTest {
 
     @Autowired
     private TestRestTemplate testRestTemplate;
-    private final String baseURL = "http://localhost:8080/computerlab";
+    private final String baseURL = "http://localhost:8090/computerlab";
 
     private static ComputerLab computerLab = ComputerLabFactory.createComputerLab("3.14", "30000", 120, true);
 
