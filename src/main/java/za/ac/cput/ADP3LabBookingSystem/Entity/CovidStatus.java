@@ -19,6 +19,8 @@ public class CovidStatus {
     private double temperature;
     private boolean symptoms;
 
+    protected CovidStatus(){}
+
     private CovidStatus(Builder builder){
         this.studentNumber = builder.studentNumber;
         this.temperature = builder.temperature;

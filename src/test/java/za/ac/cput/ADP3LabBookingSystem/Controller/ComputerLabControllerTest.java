@@ -35,6 +35,8 @@ class ComputerLabControllerTest {
     @Test
     void a_create() {
         String url = baseURL + "/create";
+        HttpHeaders httpHeaders = new HttpHeaders();
+        httpHeaders.setBasicAuth(username, password);
         ResponseEntity<ComputerLab> postResponse = testRestTemplate.postForEntity(url, computerLab, ComputerLab.class);
         assertNotNull(postResponse);
         assertNotNull(postResponse.getBody());
@@ -47,6 +49,8 @@ class ComputerLabControllerTest {
     @Test
     void b_read() {
         String url = baseURL + "/read/" + computerLab.getLabId();
+        HttpHeaders httpHeaders = new HttpHeaders();
+        httpHeaders.setBasicAuth(username, password);
         ResponseEntity<ComputerLab> responseEntity = testRestTemplate.getForEntity(url, ComputerLab.class);
         assertNotNull(responseEntity);
         System.out.println("Read data: " + responseEntity.getBody());
@@ -58,6 +62,8 @@ class ComputerLabControllerTest {
         ComputerLab updatedComputerLab = new ComputerLab.Builder().copy(computerLab).setCapacity(80).build();
 
         String url = baseURL + "/update";
+        HttpHeaders httpHeaders = new HttpHeaders();
+        httpHeaders.setBasicAuth(username, password);
         ResponseEntity<ComputerLab> responseEntity = testRestTemplate.postForEntity(url, updatedComputerLab, ComputerLab.class);
         assertNotNull(responseEntity);
         System.out.println("Updated data: " + responseEntity.getBody());
@@ -66,6 +72,8 @@ class ComputerLabControllerTest {
     @Test
     void e_delete() {
         String url = baseURL + "/delete/" + computerLab.getLabId();
+        HttpHeaders httpHeaders = new HttpHeaders();
+        httpHeaders.setBasicAuth(username, password);
         ResponseEntity<ComputerLab> responseEntity = testRestTemplate.getForEntity(baseURL + "/read/" + computerLab.getLabId(), ComputerLab.class);
         assertNotNull(responseEntity.getBody().getLabId(), "Computer lab id{'" + computerLab.getLabId() + "'} was not found.");
         testRestTemplate.delete(url);
