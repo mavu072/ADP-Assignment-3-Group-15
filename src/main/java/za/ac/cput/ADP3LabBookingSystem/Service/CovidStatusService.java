@@ -1,3 +1,8 @@
+/*
+ * CovidStatusService.java
+ * Author: Grant Metcalf (217222943)
+ * Date: October 2021
+ * */
 package za.ac.cput.ADP3LabBookingSystem.Service;
 
 import org.springframework.beans.factory.annotation.Autowired;
