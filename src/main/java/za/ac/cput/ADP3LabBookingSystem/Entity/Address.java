@@ -8,8 +8,15 @@
 
 package za.ac.cput.ADP3LabBookingSystem.Entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Address")
 public class Address {
 
+ @Id
     private String street, suburb, city;
     private int zipCode;
     public Address (){
@@ -44,6 +51,22 @@ public class Address {
             this.street = street;
 
             return this;
+        }
+     
+      public String getStreet() {
+            return street;
+        }
+
+        public String getSuburb() {
+            return suburb;
+        }
+
+        public String getCity() {
+            return city;
+        }
+
+        public int getZipCode() {
+            return zipCode;
         }
 
         public Builder setSuburb(String suburb) {
