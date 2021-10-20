@@ -6,21 +6,31 @@
  */
 
 package za.ac.cput.ADP3LabBookingSystem.Entity;
+
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Id;
 import java.util.Date;
 import java.sql.Time;
 
+@Entity
+@Table(name = "Booking")
 public class Booking{
     //instance vars
+    @Id
     private String bookingid;
     private String studentnr;
     private Date bookingdate;
-    private Time starttime;
-    private Time endtime;
+    private String starttime;
+    private String endtime;
     private String labid;
     private String seatnumber;
 
-    //Builder builder
-    public Booking(Builder builder){
+    //Private default constructor
+    protected Booking(){}
+    //Private constructor that accepts a Builder object
+    private Booking(Builder builder){
         this.bookingid = builder.bookingid;
         this.studentnr = builder.studentnr;
         this.bookingdate = builder.bookingdate;
@@ -30,18 +40,47 @@ public class Booking{
         this.seatnumber = builder.seatnumber;
     }
 
+    //Getters and toString methods
+    public String getBookingId(){
+        return bookingid;
+    }
+
+    public String getStudentnr(){ return studentnr; }
+
+    public Date getBookingDate(){ return bookingdate; }
+
+    public String getBookingStartTime(){ return starttime; }
+
+    public String getBookingEndTime(){ return endtime; }
+
+    public String getBookingLabId(){ return labid; }
+
+    public String getBookingSeatNumber(){ return seatnumber; }
+
+    public String toString(){
+        return "Booking{" +
+                " bookingid = " + this.bookingid +
+                ", studentnr = " + this.studentnr +
+                ", bookingdate = " + this.bookingdate +
+                ", starttime = " + this.starttime +
+                ", endtime = "+ this.endtime +
+                ", labid = " + this.labid +
+                ", seatnumber = " + this.seatnumber +
+                '}';
+    }
+
 
     public static class Builder{
 
         private String bookingid;
         private String studentnr;
         private Date bookingdate;
-        private Time starttime;
-        private Time endtime;
+        private String starttime;
+        private String endtime;
         private String labid;
         private String seatnumber;
 
-        private Builder(){}
+
 
         public static Builder newInstance(){
             return new Builder();
@@ -63,12 +102,12 @@ public class Booking{
             return this;
         }
 
-        public Builder setStartTime(Time starttime) {
+        public Builder setStartTime(String starttime) {
             this.starttime = starttime;
             return this;
         }
 
-        public Builder setEndTime(Time endtime) {
+        public Builder setEndTime(String endtime) {
             this.endtime = endtime;
             return this;
         }
@@ -83,7 +122,7 @@ public class Booking{
             return this;
         }
 
-        /*public Builder copy(Booking booking){
+        public Builder copy(Booking booking){
             this.bookingid = booking.bookingid;
             this.studentnr = booking.studentnr;
             this.bookingdate = booking.bookingdate;
@@ -92,26 +131,12 @@ public class Booking{
             this.labid = booking.labid;
             this.seatnumber = booking.seatnumber;
             return this;
-        }*/
+        }
 
         public Booking build(){
             return new Booking(this);
         }
 
-        //toString()
-        @Override
-        public String toString(){
-
-        return "Booking{" +
-            "bookingid = " + this.bookingid +
-            ", studentnr = " + this.studentnr +
-            ", bookingdate = " + this.bookingdate +
-            ", starttime = " + this.starttime +
-            ", endtime = "+ this.endtime +
-            ", labid = " + this.labid +
-            ", seatnumber = " + this.seatnumber +
-            '}';
-        }
     }//end Builder class
 
 }
