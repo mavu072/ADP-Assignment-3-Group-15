@@ -16,7 +16,7 @@ class CovidStatusFactoryTest {
 
     @Test
     void createCovidStatus() {
-        CovidStatus covidStatus = CovidStatusFactory.createCovidStatus("217222943","36.4",false);
+        CovidStatus covidStatus = CovidStatusFactory.createCovidStatus("217222943",36.4,false);
         Assertions.assertEquals(covidStatus,covidStatus);
         System.out.println(covidStatus);
     }

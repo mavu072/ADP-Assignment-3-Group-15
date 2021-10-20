@@ -8,7 +8,8 @@ package za.ac.cput.ADP3LabBookingSystem.Entity;
 
 public class CovidStatus {
 
-    private String studentNumber, temperature;
+    private String studentNumber;
+    private double temperature;
     private boolean symptoms;
 
     private CovidStatus(Builder builder){
@@ -26,9 +27,22 @@ public class CovidStatus {
                 '}';
     }
 
+    public String getStudentNumber() {
+        return studentNumber;
+    }
+
+    public double getTemperature() {
+        return temperature;
+    }
+
+    public boolean getSymptoms() {
+        return symptoms;
+    }
+
     public static class Builder {
 
-        private String studentNumber, temperature;
+        private String studentNumber;
+        private double temperature;
         private boolean symptoms;
 
         public Builder setStudentNumber(String studentNumber) {
@@ -36,7 +50,7 @@ public class CovidStatus {
             return this;
         }
 
-        public Builder setTemperature(String temperature) {
+        public Builder setTemperature(double temperature) {
             this.temperature = temperature;
             return this;
         }
@@ -45,7 +59,6 @@ public class CovidStatus {
             this.symptoms = symptoms;
             return this;
         }
-
 
         public Builder copy(CovidStatus covidStatus) {
             this.studentNumber = covidStatus.studentNumber;
