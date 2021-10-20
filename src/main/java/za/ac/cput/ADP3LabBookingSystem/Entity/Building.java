@@ -6,11 +6,20 @@ package za.ac.cput.ADP3LabBookingSystem.Entity;
  */
 
 public class Building {
-    private String buildingId;
+    private static String buildingId;
     private Building(Builder builder){
         this.buildingId = builder.buildingId;
 
     }
+
+    public static String getBuildingId() {
+        return buildingId;
+    }
+
+    public void setBuildingId(String buildingId) {
+        this.buildingId = buildingId;
+    }
+
     //To string
     @Override
     public String toString() {
