@@ -4,7 +4,7 @@ import za.ac.cput.ADP3LabBookingSystem.Entity.Address;
 
 import java.util.List;
 
-public interface IAddressService extends IService {
+public interface IAddressService extends IService<Address, String> {
 
     public List<Address> getAll();
 

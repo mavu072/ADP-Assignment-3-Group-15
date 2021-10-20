@@ -30,7 +30,7 @@ public class AddressServiceTest {
 
     @Test
     void b_read() {
-        Address readAddress = addressService.read(address.getZipCode());
+        Address readAddress = addressService.read(Integer.toString(address.getZipCode()));
         assertNotNull(readAddress);
         System.out.println("Read...");
         System.out.println("Address: " + readAddress);
@@ -38,7 +38,7 @@ public class AddressServiceTest {
 
     @Test
     void c_update() {
-        Address oldAddress  = addressService.read(address.getZipCode());
+        Address oldAddress  = addressService.read(Integer.toString(address.getZipCode()));
         Address updatedAddress = new Address.Builder().copy(oldAddress).setCity("Stelly").build();
         assertNotNull(addressService.update(updatedAddress));
         System.out.println("Updated...");
@@ -48,7 +48,7 @@ public class AddressServiceTest {
     @Test
     @Disabled
     void e_delete() {
-        boolean isDeleted = addressService.delete(1233);
+        boolean isDeleted = addressService.delete(Integer.toString(1233));
         assertTrue(isDeleted);
         System.out.println("Deleted: " + isDeleted);
     }

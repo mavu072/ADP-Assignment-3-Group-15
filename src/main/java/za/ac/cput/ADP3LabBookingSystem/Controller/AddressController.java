@@ -2,12 +2,15 @@ package za.ac.cput.ADP3LabBookingSystem.Controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import za.ac.cput.ADP3LabBookingSystem.Entity.Address;
+import za.ac.cput.ADP3LabBookingSystem.Factory.AddressFactory;
+import za.ac.cput.ADP3LabBookingSystem.Service.AddressService;
+
+import java.util.List;
 
 @RestController
-@RequestMapping
+@RequestMapping("/address")
 
 public class AddressController {
 

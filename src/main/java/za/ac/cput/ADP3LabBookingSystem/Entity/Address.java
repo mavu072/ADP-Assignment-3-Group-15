@@ -16,8 +16,11 @@ import javax.persistence.Table;
 @Table(name = "Address")
 public class Address {
 
- @Id
-    private String street, suburb, city;
+
+    @Id
+    private String street;
+    private String suburb;
+    private String city;
     private int zipCode;
     public Address (){
 
@@ -40,6 +43,22 @@ public class Address {
                 ", city='" + city + '\'' +
                 ", zipCode=" + zipCode +
                 '}';
+    }
+
+    public String getStreet() {
+        return street;
+    }
+
+    public String getSuburb() {
+        return suburb;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public int getZipCode() {
+        return zipCode;
     }
 
     public static class Builder {

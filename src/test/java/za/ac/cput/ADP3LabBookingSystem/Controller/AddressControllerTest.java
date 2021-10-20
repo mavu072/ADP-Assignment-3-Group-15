@@ -21,7 +21,7 @@ public class AddressControllerTest {
     private TestRestTemplate testRestTemplate;
     private final String baseURL = "http://localhost:8080/address";
 
-    private static Address address = AddressFactory.createAddress(12, "Cape town", "Zonnebloem", "7600");
+    private static Address address = AddressFactory.createAddress("12", "Cape town", "Zonnebloem", 7600);
 
     @Test
     void a_create() {
@@ -32,7 +32,7 @@ public class AddressControllerTest {
         assertEquals(postResponse.getStatusCode(), HttpStatus.OK);
         address = postResponse.getBody();
         System.out.println("Saved data: " + address);
-        assertEquals(Address.getZipCode(), postResponse.getBody().getZipCode());
+        assertEquals(address.getZipCode(), postResponse.getBody().getZipCode());
     }
 
     @Test

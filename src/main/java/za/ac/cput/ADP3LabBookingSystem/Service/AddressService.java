@@ -8,7 +8,7 @@ import za.ac.cput.ADP3LabBookingSystem.Repository.AddressRepository;
 import java.util.List;
 
 @Service
-public class AddressService {
+public class AddressService implements IAddressService {
 
     private static AddressService service = null;
 
@@ -27,11 +27,11 @@ public class AddressService {
 
     @Override
     public Address update(Address address){
-        if (this.repository.existById(address.getZipCode()));
+//        if (this.repository.existsById(address.getZipCode());
         return this.repository.save(address);
     }
 
-    public boolean delete(int zipCode) {
+    public boolean delete(String zipCode) {
         this.repository.deleteById(zipCode);
 
         if (this.repository.existsById(zipCode))
