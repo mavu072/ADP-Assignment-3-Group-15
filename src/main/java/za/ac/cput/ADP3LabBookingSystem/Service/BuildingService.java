@@ -18,7 +18,7 @@ public class BuildingService implements IBuildingService {
     private BuildingRepository repository;
 
     @Override
-    public Building create(Building building) {
+    public static Building create(Building building) {
         return this.repository.create(building);
     }
 
@@ -28,19 +28,19 @@ public class BuildingService implements IBuildingService {
     }
 
     @Override
-    public Building update(Building building) {
+    public static Building update(Building building) {
         return  this.repository.update(building);
 
     }
 
     @Override
-    public boolean delete(String buildingId) {
+    public static boolean delete(String buildingId) {
         return this.repository.delete(buildingId);
 
     }
 
     @Override
-    public Set<Building> getAll() {
+    public static Set<Building> getAll() {
         return this.repository.getAll();
     }
 }

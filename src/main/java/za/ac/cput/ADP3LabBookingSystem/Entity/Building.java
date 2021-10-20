@@ -12,7 +12,7 @@ public class Building {
 
     }
 
-    public String getBuildingId() {
+    public static String getBuildingId() {
         return buildingId;
     }
 
