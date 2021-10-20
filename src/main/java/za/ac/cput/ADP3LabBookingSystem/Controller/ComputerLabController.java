@@ -16,7 +16,7 @@ import za.ac.cput.ADP3LabBookingSystem.Service.ComputerLabService;
 
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("/computerlab")
 public class ComputerLabController {
 
@@ -44,10 +44,6 @@ public class ComputerLabController {
         return computerLabService.delete(labId);
     }
 
-    @RequestMapping(value = "/getall", method = RequestMethod.GET)
-    public String getAll(Model model){
-        List<ComputerLab> computerLabList = computerLabService.getAll();
-        model.addAttribute("computerlabList",computerLabList);
-        return "computerLabHome";
-    }
+    @GetMapping("/getall")
+    public List<ComputerLab> getAll(){ return computerLabService.getAll(); }
 }

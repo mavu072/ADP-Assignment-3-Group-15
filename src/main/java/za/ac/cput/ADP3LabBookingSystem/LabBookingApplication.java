@@ -17,7 +17,7 @@ import org.springframework.web.filter.CorsFilter;
 
 import java.util.Arrays;
 
-@EnableAdminServer
+//@EnableAdminServer
 @SpringBootApplication
 public class LabBookingApplication {
     public static void main(String[] args) {

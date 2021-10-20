@@ -25,6 +25,8 @@ class ComputerLabControllerTest {
     @Autowired
     private TestRestTemplate testRestTemplate;
     private final String baseURL = "http://localhost:8090/computerlab";
+    private final String username = "admin";
+    private final String password = "admin1234";
 
     private static ComputerLab computerLab = ComputerLabFactory.createComputerLab("3.14", "30000", 120, true);
 
@@ -71,6 +73,7 @@ class ComputerLabControllerTest {
     void d_getAll() {
         String url = baseURL + "/getall";
         HttpHeaders httpHeaders = new HttpHeaders();
+        httpHeaders.setBasicAuth(username, password);
         HttpEntity<String> httpEntity = new HttpEntity<>(null, httpHeaders);
         ResponseEntity<String> responseEntity = testRestTemplate.exchange(url, HttpMethod.GET, httpEntity, String.class);
         System.out.println("Read all...");
