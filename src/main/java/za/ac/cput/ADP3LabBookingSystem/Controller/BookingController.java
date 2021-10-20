@@ -7,6 +7,7 @@ import za.ac.cput.ADP3LabBookingSystem.Entity.Booking;
 import za.ac.cput.ADP3LabBookingSystem.Factory.BookingFactory;
 import za.ac.cput.ADP3LabBookingSystem.Service.BookingService;
 
+import java.util.List;
 import java.util.Set;
 
 @RestController
@@ -40,7 +41,7 @@ public class BookingController {
 
 
     @GetMapping("/getAll")
-    public Set<Booking> getAll(){
+    public List<Booking> getAll(){
         return bookingService.getAll();
     }
 }
