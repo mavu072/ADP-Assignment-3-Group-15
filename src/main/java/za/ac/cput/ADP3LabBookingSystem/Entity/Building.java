@@ -11,6 +11,15 @@ public class Building {
         this.buildingId = builder.buildingId;
 
     }
+
+    public String getBuildingId() {
+        return buildingId;
+    }
+
+    public void setBuildingId(String buildingId) {
+        this.buildingId = buildingId;
+    }
+
     //To string
     @Override
     public String toString() {
