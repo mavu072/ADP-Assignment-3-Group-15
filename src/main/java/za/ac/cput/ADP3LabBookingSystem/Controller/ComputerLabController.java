@@ -7,6 +7,8 @@
 package za.ac.cput.ADP3LabBookingSystem.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.ADP3LabBookingSystem.Entity.ComputerLab;
 import za.ac.cput.ADP3LabBookingSystem.Factory.ComputerLabFactory;
@@ -43,7 +45,5 @@ public class ComputerLabController {
     }
 
     @GetMapping("/getall")
-    public List<ComputerLab> getAll(){
-        return computerLabService.getAll();
-    }
+    public List<ComputerLab> getAll(){ return computerLabService.getAll(); }
 }

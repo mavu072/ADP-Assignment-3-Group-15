@@ -10,7 +10,7 @@ import za.ac.cput.ADP3LabBookingSystem.Entity.CovidStatus;
 
 public class CovidStatusFactory {
 
-    public static CovidStatus createCovidStatus(String studentNumber, String temperature, boolean symptoms){
+    public static CovidStatus createCovidStatus(String studentNumber, double temperature, boolean symptoms){
         CovidStatus covidStatus = new CovidStatus.Builder().setStudentNumber(studentNumber)
                 .setTemperature(temperature)
                 .setSymptoms(symptoms)
