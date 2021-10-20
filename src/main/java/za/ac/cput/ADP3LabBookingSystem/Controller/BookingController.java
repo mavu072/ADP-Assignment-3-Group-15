@@ -10,7 +10,7 @@ import za.ac.cput.ADP3LabBookingSystem.Service.BookingService;
 import java.util.Set;
 
 @RestController
-@RequestMapping("/computerlab")
+@RequestMapping("/booking")
 public class BookingController {
     @Autowired
     private BookingService bookingService;
