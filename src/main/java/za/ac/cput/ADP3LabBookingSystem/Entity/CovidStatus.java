@@ -6,8 +6,15 @@
  * */
 package za.ac.cput.ADP3LabBookingSystem.Entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "CovidStatus")
 public class CovidStatus {
 
+    @Id
     private String studentNumber;
     private double temperature;
     private boolean symptoms;

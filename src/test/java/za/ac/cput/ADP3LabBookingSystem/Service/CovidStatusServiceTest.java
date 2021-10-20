@@ -8,7 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import za.ac.cput.ADP3LabBookingSystem.Entity.CovidStatus;
 import za.ac.cput.ADP3LabBookingSystem.Factory.CovidStatusFactory;
-
+/*
+ * CovidStatusService.java
+ * Author: Grant Metcalf (217222943)
+ * Date: October 2021
+ * */
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
