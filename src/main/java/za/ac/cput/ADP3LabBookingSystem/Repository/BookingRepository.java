@@ -1,11 +1,12 @@
 package za.ac.cput.ADP3LabBookingSystem.Repository;
 
+import org.springframework.stereotype.Repository;
 import za.ac.cput.ADP3LabBookingSystem.Entity.Booking;
 import za.ac.cput.ADP3LabBookingSystem.Repository.IBookingRepository;
 import java.util.HashSet;
 import java.util.Set;
 
-
+@Repository
 public class BookingRepository implements IBookingRepository{
 
     private static BookingRepository repository = null;

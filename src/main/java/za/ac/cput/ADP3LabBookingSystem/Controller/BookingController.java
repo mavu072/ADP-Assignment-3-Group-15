@@ -1,16 +1,16 @@
 package za.ac.cput.ADP3LabBookingSystem.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
 import za.ac.cput.ADP3LabBookingSystem.Entity.Booking;
 import za.ac.cput.ADP3LabBookingSystem.Factory.BookingFactory;
 import za.ac.cput.ADP3LabBookingSystem.Service.BookingService;
 
 import java.util.Set;
 
+@RestController
+@RequestMapping("/computerlab")
 public class BookingController {
     @Autowired
     private BookingService bookingService;

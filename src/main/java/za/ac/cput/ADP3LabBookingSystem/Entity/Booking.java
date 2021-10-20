@@ -6,11 +6,19 @@
  */
 
 package za.ac.cput.ADP3LabBookingSystem.Entity;
+
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Id;
 import java.util.Date;
 import java.sql.Time;
 
+@Entity
+@Table(name = "Booking")
 public class Booking{
     //instance vars
+    @Id
     private String bookingid;
     private String studentnr;
     private Date bookingdate;
@@ -20,7 +28,7 @@ public class Booking{
     private String seatnumber;
 
     //Private default constructor
-    private Booking(){}
+    protected Booking(){}
     //Private constructor that accepts a Builder object
     private Booking(Builder builder){
         this.bookingid = builder.bookingid;

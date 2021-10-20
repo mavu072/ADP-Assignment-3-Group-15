@@ -3,7 +3,6 @@ package za.ac.cput.ADP3LabBookingSystem.Service;
 import org.springframework.stereotype.Service;
 import za.ac.cput.ADP3LabBookingSystem.Entity.Booking;
 import za.ac.cput.ADP3LabBookingSystem.Repository.BookingRepository;
-
 import java.util.Set;
 
 @Service

@@ -8,6 +8,6 @@ import java.util.Date;
 public class BookingControllerTest {
     @Test
     public static void demo(){
-
+        //incomplete - Amy
     }
 }
