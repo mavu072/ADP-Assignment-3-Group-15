@@ -25,6 +25,8 @@ class ComputerLabControllerTest {
     @Autowired
     private TestRestTemplate testRestTemplate;
     private final String baseURL = "http://localhost:8090/computerlab";
+
+
     private final String username = "admin";
     private final String password = "admin1234";
 

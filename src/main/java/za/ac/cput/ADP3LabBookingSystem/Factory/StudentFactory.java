@@ -29,9 +29,13 @@ public class StudentFactory {
 
         int random = (int)(Math.random()*(300000000-200000000)+200000000);
         String studentNumber =""+ random;
-        //req data structure to check if exists already.
 
         return new Student.Builder()
-                .setStudentNumber(studentNumber).setFirstName(firstName).setLastName(lastName).setEmail(email).setPhoneNumber(phoneNumber).build();
+                .setStudentNumber(studentNumber)
+                .setFirstName(firstName)
+                .setLastName(lastName)
+                .setEmail(email)
+                .setPhoneNumber(phoneNumber)
+                .build();
     }
 }

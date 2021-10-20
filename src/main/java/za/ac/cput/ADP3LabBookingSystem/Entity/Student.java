@@ -7,12 +7,24 @@
  */
 package za.ac.cput.ADP3LabBookingSystem.Entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Student")
 public class Student {
+
+    @Id
     private String studentNumber;
     private String firstName;
     private String lastName;
     private String email;
     private String phoneNumber;
+
+    public Student(){
+
+    }
 
     private Student(Builder builder) {
         this.studentNumber = builder.studentNumber;
@@ -20,6 +32,26 @@ public class Student {
         this.lastName = builder.lastName;
         this.email = builder.email;
         this.phoneNumber = builder.phoneNumber;
+    }
+
+    public String getStudentNumber() {
+        return studentNumber;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
     public static class Builder{
@@ -66,6 +98,7 @@ public class Student {
             this.firstName = student.firstName;
             this.lastName= student.lastName;
             this.email = student.email;
+            this.phoneNumber = student.phoneNumber;
 
             return this;
         }
