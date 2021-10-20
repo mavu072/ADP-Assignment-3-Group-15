@@ -19,14 +19,15 @@ public class StudentController {
     public Student create(@RequestBody Student student)
     {
         Student newStudent = StudentFactory.build(
-                student.getStudentNumber(),
+
                 student.getFirstName(),
                 student.getLastName(),
-                student.getEmail());
+                student.getEmail(),
+                student.getPhoneNumber());
         return studentService.create(newStudent);
     }
 
-    @PostMapping("/read/{studentNumber}")
+    @GetMapping("/read/{studentNumber}")
     public Student read(@PathVariable String studentNumber)
     {
         return studentService.read(studentNumber);
@@ -37,12 +38,12 @@ public class StudentController {
         return studentService.update(student);
     }
 
-    @PostMapping("/delete/{studentNumber}")
+    @DeleteMapping("/delete/{studentNumber}")
     public boolean delete(@PathVariable String studentNumber) {
         return studentService.delete(studentNumber);
     }
 
-    @PostMapping("/getall")
+    @GetMapping("/getall")
     public List<Student> getAll(){
         return studentService.getAll();
     }

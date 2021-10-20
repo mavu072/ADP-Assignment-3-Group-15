@@ -12,7 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table
+@Table(name = "Student")
 public class Student {
 
     @Id
@@ -21,6 +21,10 @@ public class Student {
     private String lastName;
     private String email;
     private String phoneNumber;
+
+    public Student(){
+
+    }
 
     private Student(Builder builder) {
         this.studentNumber = builder.studentNumber;
@@ -94,6 +98,7 @@ public class Student {
             this.firstName = student.firstName;
             this.lastName= student.lastName;
             this.email = student.email;
+            this.phoneNumber = student.phoneNumber;
 
             return this;
         }
