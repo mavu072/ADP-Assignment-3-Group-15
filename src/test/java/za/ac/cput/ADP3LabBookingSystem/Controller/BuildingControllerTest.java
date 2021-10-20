@@ -52,7 +52,7 @@ class BuildingControllerTest {
 
     @Test
     void c_update() {
-        Building updatedBuilding = new ComputerLab.Builder().copy(za.ac.cput.ADP3LabBookingSystem.Entity.Building.getBuildingId().build());
+        Building updatedBuilding = new Building.Builder().copy(za.ac.cput.ADP3LabBookingSystem.Entity.Building.getBuildingId().build());
 
         String url = baseURL + "/update";
         ResponseEntity<Building> responseEntity = testRestTemplate.postForEntity(url, updatedBuilding, Building.class);

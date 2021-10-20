@@ -6,7 +6,7 @@ package za.ac.cput.ADP3LabBookingSystem.Entity;
  */
 
 public class Building {
-    private String buildingId;
+    private static String buildingId;
     private Building(Builder builder){
         this.buildingId = builder.buildingId;
 
